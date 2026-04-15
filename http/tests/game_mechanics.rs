@@ -48,7 +48,7 @@ fn outfits() {
 #[test]
 fn pets() {
     let client = setup::setup();
-    let _: Pet = client.single(1u32).unwrap();
+    let _: Pet = client.single(1u16).unwrap();
 }
 
 #[test]
