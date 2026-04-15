@@ -2,17 +2,8 @@
 
 use gw2lib::{
     model::{
-        misc::{
-            dungeons::Dungeon,
-            files::GameFile,
-            minis::Mini,
-            quaggans::Quaggan,
-            titles::Title,
-        },
-        items::{
-            finishers::Finisher,
-            materials::MaterialCategory,
-        },
+        items::{finishers::Finisher, materials::MaterialCategory},
+        misc::{dungeons::Dungeon, files::GameFile, minis::Mini, quaggans::Quaggan, titles::Title},
     },
     Requester,
 };

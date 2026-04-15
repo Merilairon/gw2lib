@@ -1,11 +1,10 @@
 use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
+
 use crate::{
-    authenticated::pvp::PvpResult,
-    guild::upgrades::GuildUpgradeId,
-    items::ItemId,
-    TimeStamp,
-    Endpoint, EndpointWithId,
+    authenticated::pvp::PvpResult, guild::upgrades::GuildUpgradeId, items::ItemId, Endpoint,
+    EndpointWithId, TimeStamp,
 };
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -40,7 +39,10 @@ impl Endpoint for GuildLog {
 }
 impl EndpointWithId for GuildLog {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/log", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/log", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -62,7 +64,10 @@ impl Endpoint for GuildMembers {
 }
 impl EndpointWithId for GuildMembers {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/members", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/members", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -84,7 +89,10 @@ impl Endpoint for GuildRanks {
 }
 impl EndpointWithId for GuildRanks {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/ranks", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/ranks", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -114,7 +122,10 @@ impl Endpoint for GuildStashes {
 }
 impl EndpointWithId for GuildStashes {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/stash", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/stash", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -142,7 +153,10 @@ impl Endpoint for GuildTreasury {
 }
 impl EndpointWithId for GuildTreasury {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/treasury", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/treasury", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -174,7 +188,10 @@ impl Endpoint for GuildTeams {
 }
 impl EndpointWithId for GuildTeams {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/teams", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/teams", id)
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -189,5 +206,8 @@ impl Endpoint for GuildCompletedUpgrades {
 }
 impl EndpointWithId for GuildCompletedUpgrades {
     type IdType = String;
-    fn format_url(id: &str) -> String { format!("v2/guild/{}/upgrades", id) }
+
+    fn format_url(id: &str) -> String {
+        format!("v2/guild/{}/upgrades", id)
+    }
 }

@@ -1,11 +1,7 @@
 #![cfg(feature = "blocking")]
 
 use gw2lib::{
-    model::pvp::{
-        amulets::Amulet,
-        ranks::PvpRank,
-        seasons::PvpSeason,
-    },
+    model::pvp::{amulets::Amulet, ranks::PvpRank, seasons::PvpSeason},
     Requester,
 };
 

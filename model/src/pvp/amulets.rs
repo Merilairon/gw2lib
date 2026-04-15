@@ -1,7 +1,9 @@
 pub type AmuletId = u16;
 
 use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
+
 use crate::{items::AttributeType, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -19,8 +21,13 @@ impl Endpoint for Amulet {
     const URL: &'static str = "v2/pvp/amulets";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Amulet { type IdType = AmuletId; }
+impl EndpointWithId for Amulet {
+    type IdType = AmuletId;
+}
 impl BulkEndpoint for Amulet {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

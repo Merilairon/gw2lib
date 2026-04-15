@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{misc::colors::ColorId, BulkEndpoint, Endpoint, EndpointWithId, FixedEndpoint};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -41,6 +42,7 @@ impl Endpoint for Guild {
 }
 impl EndpointWithId for Guild {
     type IdType = String;
+
     fn format_url(id: &str) -> String {
         format!("v2/guild/{}", id)
     }
@@ -60,10 +62,15 @@ impl Endpoint for GuildPermission {
     const URL: &'static str = "v2/guild/permissions";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for GuildPermission { type IdType = String; }
+impl EndpointWithId for GuildPermission {
+    type IdType = String;
+}
 impl BulkEndpoint for GuildPermission {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

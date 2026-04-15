@@ -1,6 +1,7 @@
 pub type AbilityId = u32;
 
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -26,8 +27,13 @@ impl Endpoint for Ability {
     const URL: &'static str = "v2/wvw/abilities";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Ability { type IdType = AbilityId; }
+impl EndpointWithId for Ability {
+    type IdType = AbilityId;
+}
 impl BulkEndpoint for Ability {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

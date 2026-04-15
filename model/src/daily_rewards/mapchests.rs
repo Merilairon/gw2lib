@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -18,5 +19,8 @@ impl EndpointWithId for MapChest {
 }
 impl BulkEndpoint for MapChest {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

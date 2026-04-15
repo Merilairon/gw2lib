@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{misc::colors::ColorId, Endpoint, FixedEndpoint};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

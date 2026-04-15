@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -29,10 +30,15 @@ impl Endpoint for Story {
     const URL: &'static str = "v2/stories";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Story { type IdType = u32; }
+impl EndpointWithId for Story {
+    type IdType = u32;
+}
 impl BulkEndpoint for Story {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -50,8 +56,13 @@ impl Endpoint for StorySeason {
     const URL: &'static str = "v2/stories/seasons";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for StorySeason { type IdType = String; }
+impl EndpointWithId for StorySeason {
+    type IdType = String;
+}
 impl BulkEndpoint for StorySeason {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{Endpoint, FixedEndpoint};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -19,10 +20,15 @@ impl Endpoint for BackstoryAnswer {
     const URL: &'static str = "v2/backstory/answers";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for BackstoryAnswer { type IdType = String; }
+impl EndpointWithId for BackstoryAnswer {
+    type IdType = String;
+}
 impl BulkEndpoint for BackstoryAnswer {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -43,8 +49,13 @@ impl Endpoint for BackstoryQuestion {
     const URL: &'static str = "v2/backstory/questions";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for BackstoryQuestion { type IdType = u32; }
+impl EndpointWithId for BackstoryQuestion {
+    type IdType = u32;
+}
 impl BulkEndpoint for BackstoryQuestion {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

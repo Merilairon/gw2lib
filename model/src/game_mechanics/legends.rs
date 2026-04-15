@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{game_mechanics::skills::SkillId, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -17,8 +18,13 @@ impl Endpoint for Legend {
     const URL: &'static str = "v2/legends";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Legend { type IdType = String; }
+impl EndpointWithId for Legend {
+    type IdType = String;
+}
 impl BulkEndpoint for Legend {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

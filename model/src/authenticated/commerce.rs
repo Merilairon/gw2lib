@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{items::ItemId, Endpoint, FixedEndpoint, TimeStamp};
 pub mod delivery;
 

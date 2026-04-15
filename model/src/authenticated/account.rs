@@ -21,8 +21,8 @@ pub mod recipes;
 pub mod skins;
 pub mod titles;
 pub mod wallet;
-pub mod worldbosses;
 pub mod wizards_vault;
+pub mod worldbosses;
 
 use std::collections::BTreeSet;
 

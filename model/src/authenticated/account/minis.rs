@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{misc::minis::MiniPetId, Endpoint, FixedEndpoint};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

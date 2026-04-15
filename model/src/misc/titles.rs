@@ -1,6 +1,7 @@
 pub type TitleId = u16;
 
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -18,8 +19,13 @@ impl Endpoint for Title {
     const URL: &'static str = "v2/titles";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Title { type IdType = TitleId; }
+impl EndpointWithId for Title {
+    type IdType = TitleId;
+}
 impl BulkEndpoint for Title {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

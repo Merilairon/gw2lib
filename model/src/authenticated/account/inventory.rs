@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{
     authenticated::characters::{Binding, Stats},
     items::{skins::SkinId, ItemId},

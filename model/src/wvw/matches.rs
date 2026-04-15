@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId, TimeStamp};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -39,8 +40,13 @@ impl Endpoint for WvwMatch {
     const URL: &'static str = "v2/wvw/matches";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for WvwMatch { type IdType = String; }
+impl EndpointWithId for WvwMatch {
+    type IdType = String;
+}
 impl BulkEndpoint for WvwMatch {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

@@ -1,6 +1,7 @@
 pub type SpecializationId = u16;
 
 use serde::{Deserialize, Serialize};
+
 use crate::{game_mechanics::traits::TraitId, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -25,8 +26,13 @@ impl Endpoint for Specialization {
     const URL: &'static str = "v2/specializations";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Specialization { type IdType = SpecializationId; }
+impl EndpointWithId for Specialization {
+    type IdType = SpecializationId;
+}
 impl BulkEndpoint for Specialization {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

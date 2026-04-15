@@ -2,9 +2,7 @@
 
 use gw2lib::{
     model::daily_rewards::{
-        dailycrafting::DailyCrafting,
-        mapchests::MapChest,
-        worldbosses::WorldBoss,
+        dailycrafting::DailyCrafting, mapchests::MapChest, worldbosses::WorldBoss,
     },
     Requester,
 };

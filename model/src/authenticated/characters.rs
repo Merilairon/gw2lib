@@ -506,6 +506,7 @@ pub struct Heropoints(pub Vec<String>);
 
 impl EndpointWithId for Heropoints {
     type IdType = CharacterId;
+
     fn format_url(id: &str) -> String {
         format!("{}/{}/heropoints", Self::URL, id)
     }
@@ -551,6 +552,7 @@ pub struct Sab {
 
 impl EndpointWithId for Sab {
     type IdType = CharacterId;
+
     fn format_url(id: &str) -> String {
         format!("{}/{}/sab", Self::URL, id)
     }

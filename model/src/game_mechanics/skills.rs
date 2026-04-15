@@ -119,8 +119,13 @@ impl Endpoint for Skill {
     const URL: &'static str = "v2/skills";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Skill { type IdType = SkillId; }
+impl EndpointWithId for Skill {
+    type IdType = SkillId;
+}
 impl BulkEndpoint for Skill {
     const ALL: bool = false;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

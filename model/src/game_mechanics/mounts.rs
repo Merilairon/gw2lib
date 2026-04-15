@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{misc::colors::ColorId, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -24,10 +25,15 @@ impl Endpoint for MountSkin {
     const URL: &'static str = "v2/mounts/skins";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for MountSkin { type IdType = u32; }
+impl EndpointWithId for MountSkin {
+    type IdType = u32;
+}
 impl BulkEndpoint for MountSkin {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -46,8 +52,13 @@ impl Endpoint for MountType {
     const URL: &'static str = "v2/mounts/types";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for MountType { type IdType = String; }
+impl EndpointWithId for MountType {
+    type IdType = String;
+}
 impl BulkEndpoint for MountType {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

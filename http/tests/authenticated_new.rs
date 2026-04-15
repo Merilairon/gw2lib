@@ -3,8 +3,8 @@
 use gw2lib::{
     model::authenticated::{
         characters::Character,
-        pvp::{PvpStandings, PvpStats},
         commerce::{CurrentBuyTransactions, HistoryBuyTransactions},
+        pvp::{PvpStandings, PvpStats},
     },
     Requester,
 };

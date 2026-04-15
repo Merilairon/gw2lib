@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{items::skins::SkinId, Endpoint, FixedEndpoint};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

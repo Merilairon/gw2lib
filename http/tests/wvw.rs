@@ -2,10 +2,7 @@
 
 use gw2lib::{
     model::wvw::{
-        abilities::Ability,
-        matches::WvwMatch,
-        objectives::WvwObjective,
-        ranks::WvwRank,
+        abilities::Ability, matches::WvwMatch, objectives::WvwObjective, ranks::WvwRank,
         upgrades::WvwUpgrade,
     },
     Requester,

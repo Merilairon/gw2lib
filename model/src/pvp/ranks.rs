@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -27,8 +28,13 @@ impl Endpoint for PvpRank {
     const URL: &'static str = "v2/pvp/ranks";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for PvpRank { type IdType = u32; }
+impl EndpointWithId for PvpRank {
+    type IdType = u32;
+}
 impl BulkEndpoint for PvpRank {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

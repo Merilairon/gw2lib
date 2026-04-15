@@ -1,6 +1,7 @@
 pub type GuildUpgradeId = u64;
 
 use serde::{Deserialize, Serialize};
+
 use crate::{items::ItemId, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -37,8 +38,13 @@ impl Endpoint for GuildUpgrade {
     const URL: &'static str = "v2/guild/upgrades";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for GuildUpgrade { type IdType = GuildUpgradeId; }
+impl EndpointWithId for GuildUpgrade {
+    type IdType = GuildUpgradeId;
+}
 impl BulkEndpoint for GuildUpgrade {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

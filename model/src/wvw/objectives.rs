@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -24,8 +25,13 @@ impl Endpoint for WvwObjective {
     const URL: &'static str = "v2/wvw/objectives";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for WvwObjective { type IdType = String; }
+impl EndpointWithId for WvwObjective {
+    type IdType = String;
+}
 impl BulkEndpoint for WvwObjective {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }

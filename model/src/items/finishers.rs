@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+
 use crate::{items::ItemId, BulkEndpoint, Endpoint, EndpointWithId};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -18,8 +19,13 @@ impl Endpoint for Finisher {
     const URL: &'static str = "v2/finishers";
     const VERSION: &'static str = "2021-01-11T00:00:00.000Z";
 }
-impl EndpointWithId for Finisher { type IdType = u32; }
+impl EndpointWithId for Finisher {
+    type IdType = u32;
+}
 impl BulkEndpoint for Finisher {
     const ALL: bool = true;
-    fn id(&self) -> &Self::IdType { &self.id }
+
+    fn id(&self) -> &Self::IdType {
+        &self.id
+    }
 }
