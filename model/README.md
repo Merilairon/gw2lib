@@ -42,7 +42,7 @@ Example commit adding an endpoint: [bcb0bd3](https://github.com/greaka/gw2lib/co
       - [x] nodes
     - [x] inventory
     - [x] luck
-    - [x] mailcarries
+    - [x] mailcarriers
     - [x] mapchests
     - [x] masteries
     - mastery
