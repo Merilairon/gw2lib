@@ -110,7 +110,6 @@ pub struct Skill {
     pub log: Option<String>,
     pub ranges: Option<Vec<u32>>,
     pub recharge: Option<f32>,
-    pub equip_ttype: Option<String>,
 }
 
 impl Endpoint for Skill {
